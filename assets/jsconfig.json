@@ -1,0 +1,9 @@
+{
+ "compilerOptions": {
+  "paths": {
+   "*": [
+    "../themes/hugo-up-business/assets/*"
+   ]
+  }
+ }
+}

@@ -1,9 +1,30 @@
 baseURL = 'https://juancarbone.github.io/infra-services-landing/'
 defaultContentLanguage = 'es'
 title = 'Infraestructura IT'
+theme = 'hugo-up-business'
 
 # Genera /robots.txt automáticamente
 enableRobotsTXT = true
+
+# Necesario para que Tailwind detecte las clases usadas en las plantillas.
+build.buildStats.enable = true
+build.cachebusters = [
+  { source = 'assets/notwatching/hugo_stats\\.json', target = 'css' },
+  { source = '(postcss|tailwind)\\.config\\.js', target = 'css' },
+]
+
+[security.exec]
+  allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']
+
+[module]
+  [[module.mounts]]
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+    disableWatch = true
+
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
 
 [languages.es]
   label = 'Español'
@@ -11,4 +32,43 @@ enableRobotsTXT = true
   weight = 1
 
 [params]
-  description = 'Servicios de infraestructura IT'
+  description = 'Servicios de infraestructura IT para empresas: servidores, redes, virtualización, backups y monitoreo.'
+  copyright = '© 2026 Infraestructura IT. Todos los derechos reservados.'
+
+  location = ['Buenos Aires, Argentina']
+  contact = ['contacto@ejemplo.com', '+54 11 0000-0000']
+
+[[menus.main]]
+  name = 'Inicio'
+  url = '/#hero'
+  weight = 1
+
+[[menus.main]]
+  name = 'Casos'
+  url = '/#portfolio'
+  weight = 2
+
+[[menus.main]]
+  name = 'Contacto'
+  url = 'mailto:contacto@ejemplo.com'
+  weight = 3
+
+[[menus.buttons]]
+  name = 'Hablemos'
+  url = 'mailto:contacto@ejemplo.com'
+  weight = 1
+
+[[menus.footer]]
+  name = 'Inicio'
+  url = '/#hero'
+  weight = 1
+
+[[menus.footer]]
+  name = 'Casos'
+  url = '/#portfolio'
+  weight = 2
+
+[[menus.footer]]
+  name = 'Contacto'
+  url = 'mailto:contacto@ejemplo.com'
+  weight = 3

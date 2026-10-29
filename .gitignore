@@ -13,3 +13,6 @@ Thumbs.db
 # Local secrets and env
 .env
 .env.*
+
+# Node build deps
+node_modules/

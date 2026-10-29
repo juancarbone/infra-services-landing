@@ -1,0 +1,13 @@
+{
+  "name": "infra-services-landing",
+  "private": true,
+  "scripts": {
+    "dev": "hugo server --disableFastRender",
+    "build": "hugo --gc --minify"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0",
+    "@tailwindcss/typography": "^0.5.20",
+    "tailwindcss": "^4.0.0"
+  }
+}
