@@ -1,3 +1,14 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = 'https://juancarbone.github.io/infra-services-landing/'
+defaultContentLanguage = 'es'
+title = 'Infraestructura IT'
+
+# Genera /robots.txt automáticamente
+enableRobotsTXT = true
+
+[languages.es]
+  label = 'Español'
+  locale = 'es-ES'
+  weight = 1
+
+[params]
+  description = 'Servicios de infraestructura IT'
