@@ -1,0 +1,55 @@
+{{/* Casos. Agrega el título y la bajada de sección que el theme no soportaba,
+     y usa <h3> en cada caso para no competir con el <h1> del hero. */}}
+<section id="portfolio" class="py-8 xl:py-16">
+  <div class="container mx-auto px-4">
+    {{ with .title }}
+      <h2 class="text-primary mb-6 text-center text-4xl font-bold xl:text-5xl">{{ . }}</h2>
+    {{ end }}
+    {{ with .text }}
+      <p class="mx-auto mb-16 text-center xl:max-w-[60%]">{{ . }}</p>
+    {{ end }}
+
+    <div class="flex flex-col gap-16 xl:gap-24">
+      {{ range $i, $e := .items }}
+        <div class="grid items-center xl:grid-cols-2 xl:gap-12">
+          <div class="{{ if (eq (mod $i 2) 0) }}xl:order-2{{ end }} flex flex-col items-center justify-center">
+            {{ with .image }}
+              {{ partial "utilities/image" (dict "src" . "alt" ($e.alt | default "")) }}
+            {{ else }}
+              <div class="bg-tertiary mx-auto flex aspect-[4/3] w-full max-w-[420px] items-center justify-center rounded-4xl">
+                <span class="text-primary/30">
+                  {{ partial "icons/service" (dict "name" (.icon | default "cloud") "class" "size-32 xl:size-40") }}
+                </span>
+              </div>
+            {{ end }}
+          </div>
+          <div class="flex flex-col justify-center">
+            {{ with .pretitle }}
+              <p class="text-secondary mb-2 text-center font-bold xl:text-start">{{ . }}</p>
+            {{ end }}
+            {{ with .title }}
+              <h3 class="text-primary mb-4 text-center text-3xl font-bold xl:text-start xl:text-4xl">{{ . }}</h3>
+            {{ end }}
+            {{ with .text }}
+              <p class="mb-6 text-center xl:text-start">{{ . }}</p>
+            {{ end }}
+            {{ with .result }}
+              <p class="text-primary bg-tertiary mb-6 rounded px-4 py-3 text-center text-sm font-semibold xl:text-start">
+                {{ . }}
+              </p>
+            {{ end }}
+            <div class="flex items-center justify-center gap-4 xl:justify-start">
+              {{ range $j, $btn := .buttons }}
+                {{ if (eq $j 0) }}
+                  {{ partial "components/button/primary" (dict "label" $btn.label "href" $btn.link) }}
+                {{ else }}
+                  {{ partial "components/button/outline" (dict "label" $btn.label "href" $btn.link) }}
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

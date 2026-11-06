@@ -1,24 +1,28 @@
 enable: true
 
-title: "Testimonials"
+title: "Lo que dicen las empresas que ya dejaron de preocuparse por esto"
 
+# TODO: reemplazar por testimonios reales. Cada ítem acepta:
+#   text, client, role, company, photo (opcional)
+# Si no hay `photo`, se muestran las iniciales del nombre.
 featured:
-  image: "images/testimonials-awards.png"
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur et pretium nunc, quis euismod et. Volutpat suspendisse sed in blandit condimentum. Sagittis nullam nec mauris, feugiat hendrerit aliquam cras. Dolor tortor gravida lobortis in ultricies enim vulputate non. Neque nibh donec quam lectus."
-  client: "Anonymous Customer"
+  text: "Antes, cuando se caía el sistema, teníamos que esperar a que alguien contestara. Ahora escribimos y hay una persona trabajando en el problema. El cambio no fue técnico: fue dejar de sentir que estábamos solos."
+  client: "Nombre Apellido"
+  role: "Cargo"
+  company: "Empresa"
 
 items:
-  - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur et pretium nunc, quis euismod et. Volutpat suspendisse sed in blandit condimentum. Sagittis nullam nec mauris, feugiat hendrerit aliquam cras. Dolor tortor gravida lobortis in ultricies enim vulputate non. Neque nibh donec quam lectus."
-    client: "Anonymous Customer"
+  - text: "Nos habían vendido backup durante años. El día que tuvimos el incidente descubrimos que las copias no restauraban. Ahora el backup se prueba todos los meses y nos mandan el informe."
+    client: "Nombre Apellido"
+    role: "Cargo"
+    company: "Empresa"
 
-  - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur et pretium nunc, quis euismod et. Volutpat suspendisse sed in blandit condimentum. Sagittis nullam nec mauris, feugiat hendrerit aliquam cras. Dolor tortor gravida lobortis in ultricies enim vulputate non. Neque nibh donec quam lectus."
-    client: "Anonymous Customer"
+  - text: "Nos daba terror mudar el sistema de gestión. Lo hicieron en ventanas nocturnas y el lunes estábamos facturando como siempre. Lo único distinto era la tranquilidad."
+    client: "Nombre Apellido"
+    role: "Cargo"
+    company: "Empresa"
 
-  - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur et pretium nunc, quis euismod et. Volutpat suspendisse sed in blandit condimentum. Sagittis nullam nec mauris, feugiat hendrerit aliquam cras. Dolor tortor gravida lobortis in ultricies enim vulputate non. Neque nibh donec quam lectus."
-    client: "Anonymous Customer"
-
-  - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur et pretium nunc, quis euismod et. Volutpat suspendisse sed in blandit condimentum. Sagittis nullam nec mauris, feugiat hendrerit aliquam cras. Dolor tortor gravida lobortis in ultricies enim vulputate non. Neque nibh donec quam lectus."
-    client: "Anonymous Customer"
-
-  - text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consectetur et pretium nunc, quis euismod et. Volutpat suspendisse sed in blandit condimentum. Sagittis nullam nec mauris, feugiat hendrerit aliquam cras. Dolor tortor gravida lobortis in ultricies enim vulputate non. Neque nibh donec quam lectus."
-    client: "Anonymous Customer"
+  - text: "Dejamos de enterarnos de los problemas por el reclamo de un cliente. Ahora, cuando algo falla, ya están trabajando en eso antes de que lo notemos."
+    client: "Nombre Apellido"
+    role: "Cargo"
+    company: "Empresa"

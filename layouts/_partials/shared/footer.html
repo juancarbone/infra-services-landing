@@ -2,45 +2,42 @@
   <div class="container mx-auto px-4">
     <div class="mb-8 grid gap-8 xl:grid-cols-12">
       <div class="flex flex-col items-center gap-4 xl:col-span-4 xl:items-start">
-        <a class="flex items-center" href="{{ site.BaseURL }}">
+        <a class="flex items-center" href="{{ site.BaseURL }}" aria-label="{{ site.Title }}">
           <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">{{ site.Title }}</span>
         </a>
-        <p class="text-center text-sm xl:text-start">{{ site.Params.description }}</p>
+        <p class="text-center text-sm xl:text-start">{{ site.Params.tagline | default site.Params.description }}</p>
         {{ with .Site.Params.social }}
           <ul class="flex gap-4">
-            {{ with .dribbble }}
-              <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a class="" href="{{ . }}" aria-label="Dribble">{{ partial "icons/dribbble.html" }}</a>
-              </li>
-            {{ end }}
             {{ with .instagram }}
               <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a class="" href="{{ . }}" aria-label="Instagram">{{ partial "icons/instagram.html" }}</a>
+                <a href="{{ . }}" aria-label="Instagram">{{ partial "icons/instagram.html" }}</a>
               </li>
             {{ end }}
             {{ with .facebook }}
               <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a class="" href="{{ . }}" aria-label="Facebook">{{ partial "icons/facebook.html" }}</a>
+                <a href="{{ . }}" aria-label="Facebook">{{ partial "icons/facebook.html" }}</a>
               </li>
             {{ end }}
             {{ with .twitter }}
               <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a class="" href="{{ . }}" aria-label="Twitter">{{ partial "icons/twitter.html" }}</a>
+                <a href="{{ . }}" aria-label="Twitter">{{ partial "icons/twitter.html" }}</a>
               </li>
             {{ end }}
           </ul>
         {{ end }}
       </div>
+
       <div class="xl:col-span-2">
         <h2 class="text-primary mb-2 text-center text-lg font-bold xl:text-start">Navegación</h2>
         <ul class="flex flex-col gap-1 text-sm">
           {{ range .Site.Menus.footer }}
             <li class="text-center xl:text-start">
-              <a class="" href="{{ .URL }}">{{ .Name }}</a>
+              <a class="hover:text-primary" href="{{ .URL }}">{{ .Name }}</a>
             </li>
           {{ end }}
         </ul>
       </div>
+
       <div class="xl:col-span-3">
         <h2 class="text-primary mb-2 text-center text-lg font-bold xl:text-start">Ubicación</h2>
         <ul class="flex flex-col gap-3 text-sm">
@@ -52,21 +49,27 @@
           {{ end }}
         </ul>
       </div>
+
       <div class="xl:col-span-3">
         <h2 class="text-primary mb-2 text-center text-lg font-bold xl:text-start">Contacto</h2>
         <ul class="flex flex-col gap-1 text-sm">
           {{ range .Site.Params.contact }}
-            <li class="text-center xl:text-start">{{ . }}</li>
+            <li class="text-center xl:text-start">
+              {{ if reflect.IsMap . }}
+                <a class="hover:text-primary" href="{{ .url }}">{{ .label }}</a>
+              {{ else }}
+                {{ . }}
+              {{ end }}
+            </li>
           {{ end }}
         </ul>
       </div>
     </div>
+
     <div class="text-center text-sm">
-      <div class="">
-        {{ with .Site.Params.copyright }}
-          <p class="">{{ . }}</p>
-        {{ end }}
-      </div>
+      {{ with .Site.Params.copyright }}
+        <p>{{ . }}</p>
+      {{ end }}
     </div>
   </div>
 </footer>

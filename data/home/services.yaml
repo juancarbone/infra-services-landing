@@ -1,25 +1,33 @@
 enable: true
 
-title: "Our main services"
-text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec quam nibh elit pellentesque velit netus suspendisse. Sed enim, pretium, montes, in ut dolor urna."
+title: "Cuatro servicios, un solo responsable"
+text: "No vendemos herramientas para que las operes vos. Nos hacemos cargo de la infraestructura de punta a punta, con alcance por escrito y un único canal de contacto."
+
 cards:
-  - image: "images/services-web-development.png"
-    title: "Web development"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. "
+  - icon: "cloud"
+    title: "Administración y Migración Cloud"
+    text: "Migramos tus servidores a la nube y administramos el día a día. Planificamos cada paso con vuelta atrás y optimizamos el costo mes a mes."
     button:
-      label: "Learn more"
-      link: "#"
+      label: "Consultar"
+      link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20Administraci%C3%B3n%20y%20Migraci%C3%B3n%20Cloud"
 
-  - image: "images/services-web-development.png"
-    title: "Web development"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. "
+  - icon: "monitor"
+    title: "Monitoreo Proactivo de Redes y Servidores"
+    text: "Vigilamos servidores, red y servicios críticos las 24 horas. Cuando salta una alerta la atendemos nosotros: no te mandamos un tablero para que lo mires."
     button:
-      label: "Learn more"
-      link: "#"
+      label: "Consultar"
+      link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20Monitoreo%20Proactivo"
 
-  - image: "images/services-web-development.png"
-    title: "Web development"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. "
+  - icon: "shield"
+    title: "Seguridad Informática y Respaldo Gestionado"
+    text: "Tus datos se guardan solos, cifrados y fuera de tu oficina. Y probamos que se puedan recuperar: un backup que nunca se restauró no es un backup."
     button:
-      label: "Learn more"
-      link: "#"
+      label: "Consultar"
+      link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20Seguridad%20y%20Respaldo%20Gestionado"
+
+  - icon: "cube"
+    title: "Contenedores y Microservicios"
+    text: "Actualizá tu sistema sin cortar el servicio. Empaquetamos tus aplicaciones en contenedores para que escalen por demanda y se desplieguen sin downtime."
+    button:
+      label: "Consultar"
+      link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20Contenedores%20y%20Microservicios"

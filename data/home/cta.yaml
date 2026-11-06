@@ -1,7 +1,8 @@
 enable: true
 
-title: "Start your business now!"
-image: "images/services-web-development.png"
+title: "Empezá por saber qué tenés"
+text: "Hacemos un relevamiento sin costo de tu infraestructura: equipos, servidores, red, backups y accesos. Te decimos qué encontramos, qué es urgente y qué puede esperar. **Sin compromiso y sin letra chica.**"
+
 button:
-  label: "Let's talk"
-  link: "#"
+  label: "Pedí tu diagnóstico sin costo"
+  link: "mailto:contacto@ejemplo.com?subject=Quiero%20un%20diagn%C3%B3stico%20sin%20costo"

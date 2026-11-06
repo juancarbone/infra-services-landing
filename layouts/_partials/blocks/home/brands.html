@@ -1,0 +1,30 @@
+{{/* Marcas / confianza.
+     Acepta items como mapa (name + image opcional + url opcional) o como
+     string con la ruta de la imagen, para no romper configuraciones previas. */}}
+<section id="brands" class="py-8 xl:py-16">
+  <div class="container mx-auto px-4">
+    {{ with .title }}
+      <h2 class="text-primary mb-12 text-center text-2xl font-semibold">{{ . }}</h2>
+    {{ end }}
+    {{ if .items }}
+      <div class="flex flex-col flex-wrap items-center justify-around gap-8 xl:flex-row">
+        {{ range .items }}
+          {{ if reflect.IsMap . }}
+            {{ $name := .name | default "" }}
+            <div class="flex items-center justify-center">
+              {{ with .image }}
+                {{ partial "utilities/image.html" (dict "src" . "alt" $name "class" "w-auto h-8 grayscale opacity-70") }}
+              {{ else }}
+                <span class="text-primary/60 text-lg font-semibold tracking-wide uppercase">{{ $name }}</span>
+              {{ end }}
+            </div>
+          {{ else }}
+            <div>
+              {{ partial "utilities/image.html" (dict "src" . "alt" "" "class" "w-auto h-8") }}
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>

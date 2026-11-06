@@ -1,38 +1,34 @@
 enable: true
 
+title: "Problemas reales, resueltos sin que la empresa deje de trabajar"
+text: "Tres formas en que una PyME deja de depender de la suerte: una migración, un incidente que no llegó a pasar y un backup que se pudo restaurar."
+
+# TODO: estos tres casos son plantillas narrativas. Reemplazar por casos
+# reales (cliente, contexto y resultado) antes de publicar.
 items:
-  - image: "images/portfolio-ecommerce.png"
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
+  - icon: "cloud"
+    pretitle: "Migración cloud"
+    title: "Del servidor en la oficina a la nube, sin perder un día de facturación"
+    text: "Un estudio contable trabajaba sobre un servidor físico que ya no tenía repuestos y del que dependía toda la facturación. Planificamos la migración en ventanas nocturnas, con el entorno anterior disponible para volver atrás, y validamos cada paso con el equipo antes de cortar."
+    result: "El lunes siguiente facturaron con normalidad."
+    buttons:
+      - label: "Quiero algo así"
+        link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20migraci%C3%B3n%20cloud"
 
-    buttons: 
-      - label: "See live"
-        link: "#"
+  - icon: "monitor"
+    pretitle: "Monitoreo proactivo"
+    title: "La caída que nunca llegó a la oficina"
+    text: "El enlace principal de una distribuidora empezó a perder paquetes de madrugada. El monitoreo lo detectó, abrió el ticket y hicimos el reclamo al proveedor antes de que abriera la oficina. Cuando llegó el primer empleado, el enlace de respaldo ya estaba activo."
+    result: "Nadie de la empresa se enteró de que había un problema."
+    buttons:
+      - label: "Quiero algo así"
+        link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20monitoreo%20proactivo"
 
-      - label: "Read more"
-        link: "#"
-
-  - image: "images/portfolio-ecommerce.png"
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
-    buttons: 
-      - label: "See live"
-        link: "#"
-
-      - label: "Read more"
-        link: "#"
-
-  - image: "images/portfolio-ecommerce.png"
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
-
-    buttons: 
-      - label: "See live"
-        link: "#"
-
-      - label: "Read more"
-        link: "#"
+  - icon: "shield"
+    pretitle: "Respaldo gestionado"
+    title: "El ransomware que se frenó con un backup que sí se podía restaurar"
+    text: "Un usuario abrió un archivo adjunto y cifró la carpeta compartida de una clínica. Como las copias eran inmutables y estaban separadas del entorno productivo, el ransomware no las alcanzó. Restauramos desde la versión previa al incidente, sin pagar rescate."
+    result: "La historia clínica de los pacientes quedó intacta."
+    buttons:
+      - label: "Quiero algo así"
+        link: "mailto:contacto@ejemplo.com?subject=Consulta%20sobre%20respaldo%20gestionado"

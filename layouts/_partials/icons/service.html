@@ -1,0 +1,26 @@
+{{/* Íconos de línea para los servicios y los casos.
+     Uso: partial "icons/service" (dict "name" "cloud" "class" "size-8") */}}
+
+{{ $name := .name | default "cloud" }}
+{{ $class := .class | default "size-8" }}
+
+{{ $icons := dict
+  "cloud" `<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15a4.5 4.5 0 0 0 4.5 4.5H18a3.75 3.75 0 0 0 1.332-7.257 3 3 0 0 0-3.758-3.848 5.25 5.25 0 0 0-10.233 2.33A4.502 4.502 0 0 0 2.25 15Z"/>`
+  "monitor" `<path stroke-linecap="round" stroke-linejoin="round" d="M3 12h3.7l2.3-6 3.9 12 2.1-6H21"/>`
+  "shield" `<path stroke-linecap="round" stroke-linejoin="round" d="M12 3 4.5 6v5.25c0 4.35 3.15 7.8 7.5 9.75 4.35-1.95 7.5-5.4 7.5-9.75V6L12 3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2.25 2.25L15 9.75"/>`
+  "cube" `<path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-4.5-9 4.5v9l9 4.5 9-4.5v-9Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m3 7.5 9 4.5 9-4.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 12v9"/>`
+}}
+
+{{ $inner := index $icons $name | default (index $icons "cloud") }}
+
+<svg
+  class="{{ $class }}"
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  stroke-width="1.5"
+  stroke="currentColor"
+  aria-hidden="true"
+>
+  {{ $inner | safeHTML }}
+</svg>

@@ -1,15 +1,19 @@
 enable: true
 
-title: "How to **level up** your business"
-text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est faucibus tellus leo non pellentesque lorem vel. Arcu magna eros, potenti duis."
+title: "Infraestructura IT que **no se detiene**"
+text: "Somos el área de sistemas que tu PyME no tiene que contratar. Monitoreo 24/7, backup con restauración probada y migraciones sin cortes, con **tarifa fija mensual y sin permanencia mínima**."
 
 buttons:
-  - label: "How we work"
-    link: "#"
-    url: "#"
+  - label: "Pedí un diagnóstico sin costo"
+    link: "#contacto"
+    url: "mailto:contacto@ejemplo.com?subject=Quiero%20un%20diagn%C3%B3stico%20sin%20costo"
 
-  - label: "Let's talk"
-    link: ""
-    url: "mailto:contacto@ejemplo.com"
+  - label: "Ver servicios"
+    link: "#servicios"
+    url: "#servicios"
 
-image: "images/hero-image.png"
+note: "Relevamiento sin costo · Respuesta a incidentes críticos en menos de 30 minutos · Sin contratos anuales"
+
+# Si se define `image`, se muestra esa foto en lugar de la ilustración SVG.
+# image: "images/hero-image.png"
+# alt: "Panel de monitoreo con el estado de servidores y red de una empresa"

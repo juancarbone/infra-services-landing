@@ -1,0 +1,15 @@
+{{/* Iniciales de un nombre, para avatares sin foto.
+     Uso: partial "utilities/initials.html" (dict "name" "Ana Pérez") */}}
+{{ $name := trim (.name | default "") " " }}
+{{ $initials := "?" }}
+{{ if $name }}
+  {{ $parts := split $name " " }}
+  {{ $principal := index $parts 0 }}
+  {{ $initials = substr $principal 0 1 }}
+  {{ if gt (len $parts) 1 }}
+    {{ $last := index $parts (sub (len $parts) 1) }}
+    {{ $initials = printf "%s%s" $initials (substr $last 0 1) }}
+  {{ end }}
+  {{ $initials = upper $initials }}
+{{ end }}
+{{ $initials }}
