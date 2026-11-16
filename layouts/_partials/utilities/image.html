@@ -1,0 +1,39 @@
+{{/* Override local del partial del theme.
+     Corrige un bug: el original hacía `alt="{{ . }}"`, que al recibir un dict
+     imprimía el volcado del mapa en el atributo alt. Ahora usa el parámetro
+     `alt` (vacío por defecto, válido para imágenes decorativas). */}}
+
+{{ if not .src }}
+  {{ errorf "Image Optimization: the partial 'utilities/image' is missing the 'src' argument." }}
+{{ end }}
+
+{{ $resource := dict }}
+{{ with page.Resources.Get .src }}{{ $resource = . }}{{ end }}
+{{ with resources.Get .src }}{{ $resource = . }}{{ end }}
+
+{{ if not $resource }}{{ errorf "Image Optimization: the image '%s' has not been found." .src }}{{ end }}
+
+{{ $alt := .alt | default "" }}
+{{ $breakpoints := (slice 576 768 992 1200 1400) }}
+
+{{/* Genera las variantes WebP solo si el recurso es raster (los SVG no tienen ancho). */}}
+{{ $srcset := slice }}
+{{ if gt $resource.Width 0 }}
+  {{ range $breakpoints }}
+    {{ if ge $resource.Width . }}
+      {{ $image := $resource.Resize (printf "%dx webp" .) }}
+      {{ $srcset = $srcset | append (slice (printf "%s %dw" $image.Permalink $image.Width)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<img
+  src="{{ $resource.Permalink }}"
+  {{ with $resource.Width }}{{ if gt . 0 }}width="{{ . }}"{{ end }}{{ end }}
+  {{ with $resource.Height }}{{ if gt . 0 }}height="{{ . }}"{{ end }}{{ end }}
+  {{ with $srcset }}{{ if . }}srcset="{{ delimit . ", " }}"{{ end }}{{ end }}
+  {{ with .class }}class="{{ . }}"{{ end }}
+  alt="{{ $alt }}"
+  loading="lazy"
+  decoding="async"
+/>

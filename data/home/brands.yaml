@@ -1,9 +1,16 @@
 enable: true
 
-title: "We work with customers brands and startups "
+title: "Empresas que ya trabajan con nosotros"
+
+# TODO: reemplazar por los clientes reales antes de publicar.
+# Si agregás `image` se muestra el logo (requiere autorización escrita del
+# cliente para usar su marca); si no, se muestra el nombre en texto.
+#   - name: "Nombre del cliente"
+#     image: "images/clientes/cliente.png"
+#     url: "https://sitio-del-cliente.com"
 items:
-  - "images/brands-samsumg.png"
-  - "images/brands-google.png"
-  - "images/brands-adobe.png"
-  - "images/brands-spotify.png"
-  - "images/brands-dropbox.png"
+  - name: "Cliente 1"
+  - name: "Cliente 2"
+  - name: "Cliente 3"
+  - name: "Cliente 4"
+  - name: "Cliente 5"

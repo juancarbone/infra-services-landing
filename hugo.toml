@@ -28,15 +28,26 @@ build.cachebusters = [
 
 [languages.es]
   label = 'Español'
-  locale = 'es-ES'
+  locale = 'es-AR'
   weight = 1
 
 [params]
-  description = 'Servicios de infraestructura IT para empresas: servidores, redes, virtualización, backups y monitoreo.'
+  # Descripción usada en <meta name="description"> y en Open Graph.
+  description = 'Infraestructura IT gestionada para PyMEs: monitoreo 24/7, backup con restauración probada, migración cloud y contenedores. Tarifa fija, sin permanencia mínima.'
+
+  # Versión corta para el pie de página.
+  tagline = 'Servicios de infraestructura IT para PyMEs: monitoreo proactivo, respaldo gestionado, cloud y contenedores. Buenos Aires, Argentina.'
+
   copyright = '© 2026 Infraestructura IT. Todos los derechos reservados.'
 
-  location = ['Buenos Aires, Argentina']
-  contact = ['contacto@ejemplo.com', '+54 11 0000-0000']
+  location = ['Buenos Aires, Argentina', 'Atendemos remoto en todo el país y en sitio en CABA y GBA.']
+
+  # Cada ítem puede ser un mapa { label, url } o un texto plano.
+  contact = [
+    { label = 'contacto@ejemplo.com', url = 'mailto:contacto@ejemplo.com' },
+    { label = '+54 11 0000-0000', url = 'tel:+541100000000' },
+    { label = 'WhatsApp', url = 'https://wa.me/541100000000' },
+  ]
 
 [[menus.main]]
   name = 'Inicio'
@@ -44,18 +55,23 @@ build.cachebusters = [
   weight = 1
 
 [[menus.main]]
+  name = 'Servicios'
+  url = '/#servicios'
+  weight = 2
+
+[[menus.main]]
   name = 'Casos'
   url = '/#portfolio'
-  weight = 2
+  weight = 3
 
 [[menus.main]]
   name = 'Contacto'
   url = 'mailto:contacto@ejemplo.com'
-  weight = 3
+  weight = 4
 
 [[menus.buttons]]
-  name = 'Hablemos'
-  url = 'mailto:contacto@ejemplo.com'
+  name = 'Diagnóstico sin costo'
+  url = 'mailto:contacto@ejemplo.com?subject=Quiero%20un%20diagn%C3%B3stico%20sin%20costo'
   weight = 1
 
 [[menus.footer]]
@@ -64,11 +80,16 @@ build.cachebusters = [
   weight = 1
 
 [[menus.footer]]
+  name = 'Servicios'
+  url = '/#servicios'
+  weight = 2
+
+[[menus.footer]]
   name = 'Casos'
   url = '/#portfolio'
-  weight = 2
+  weight = 3
 
 [[menus.footer]]
   name = 'Contacto'
   url = 'mailto:contacto@ejemplo.com'
-  weight = 3
+  weight = 4
