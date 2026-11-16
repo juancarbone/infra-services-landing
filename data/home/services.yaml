@@ -1,25 +1,25 @@
 enable: true
 
-title: "Our main services"
-text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nec quam nibh elit pellentesque velit netus suspendisse. Sed enim, pretium, montes, in ut dolor urna."
+title: "Nuestros servicios de infraestructura"
+text: "Ofrecemos soluciones integrales para mantener tu infraestructura IT operativa, segura y escalable. Cada servicio está diseñado para cubrir necesidades específicas de empresas modernas."
 cards:
-  - image: "images/services-web-development.png"
-    title: "Web development"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. "
+  - image: "images/servidores.png"
+    title: "Gestión de servidores"
+    text: "Instalación, configuración y mantenimiento de servidores físicos y virtuales. Optimización de rendimiento y seguridad para Linux y Windows Server."
     button:
-      label: "Learn more"
+      label: "Más información"
       link: "#"
 
-  - image: "images/services-web-development.png"
-    title: "Web development"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. "
+  - image: "images/redes.png"
+    title: "Diseño de redes"
+    text: "Arquitectura de redes empresariales, configuración de routers, switches y firewalls. Conectividad segura y alta disponibilidad."
     button:
-      label: "Learn more"
+      label: "Más información"
       link: "#"
 
-  - image: "images/services-web-development.png"
-    title: "Web development"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Molestie in malesuada eget fames purus ligula luctus tellus. Habitant condimentum sit gravida praesent. "
+  - image: "images/virtualizacion.png"
+    title: "Virtualización y Cloud"
+    text: "Implementación de VMware, Proxmox y soluciones cloud híbridas. Migración de cargas de trabajo y optimización de recursos."
     button:
-      label: "Learn more"
+      label: "Más información"
       link: "#"

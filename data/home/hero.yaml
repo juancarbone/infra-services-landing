@@ -1,15 +1,15 @@
 enable: true
 
-title: "How to **level up** your business"
-text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est faucibus tellus leo non pellentesque lorem vel. Arcu magna eros, potenti duis."
+title: "Infraestructura IT **profesional** para tu empresa"
+text: "Gestionamos servidores, redes, virtualización, backups y monitoreo para que tu negocio opere sin interrupciones. Soluciones escalables y seguras."
 
 buttons:
-  - label: "How we work"
-    link: "#"
-    url: "#"
+  - label: "Nuestros servicios"
+    link: "#services"
+    url: "#services"
 
-  - label: "Let's talk"
+  - label: "Hablemos"
     link: ""
     url: "mailto:contacto@ejemplo.com"
 
-image: "images/hero-image.png"
+image: "images/hero-infraestructura.png"

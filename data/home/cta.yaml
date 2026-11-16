@@ -1,7 +1,7 @@
 enable: true
 
-title: "Start your business now!"
-image: "images/services-web-development.png"
+title: "¿Listo para optimizar tu infraestructura?"
+image: "images/cta-monitoreo.png"
 button:
-  label: "Let's talk"
-  link: "#"
+  label: "Solicitar consultoría gratuita"
+  link: "mailto:contacto@ejemplo.com"

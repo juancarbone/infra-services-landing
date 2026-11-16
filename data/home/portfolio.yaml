@@ -1,38 +1,29 @@
 enable: true
 
 items:
-  - image: "images/portfolio-ecommerce.png"
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
+  - image: "images/caso-backup.png"
+    pretitle: "Caso de éxito"
+    title: "Migración a backup automatizado"
+    text: "Implementamos un sistema de backup automatizado con replicación en sitio remoto para una empresa de logística. Redujimos el RTO de 24h a 2h y eliminamos pérdidas de datos."
 
     buttons: 
-      - label: "See live"
+      - label: "Ver detalles"
         link: "#"
 
-      - label: "Read more"
-        link: "#"
-
-  - image: "images/portfolio-ecommerce.png"
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
+  - image: "images/caso-redes.png"
+    pretitle: "Caso de éxito"
+    title: "Rediseño de red corporativa"
+    text: "Rediseñamos la infraestructura de redes para una firma legal con 3 sucursales. Implementamos VLANs, QoS y SD-WAN para garantizar conectividad crítica 24/7."
 
     buttons: 
-      - label: "See live"
+      - label: "Ver detalles"
         link: "#"
 
-      - label: "Read more"
-        link: "#"
-
-  - image: "images/portfolio-ecommerce.png"
-    pretitle: "Portfolio Service"
-    title: "We developed an eCommerce website"
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sed euismod quis sit gravida pharetra sit. Cursus vel enim pretium vulputate semper sem elit magna neque. Aliquet adipisc."
+  - image: "images/caso-virtualizacion.png"
+    pretitle: "Caso de éxito"
+    title: "Consolidación de servidores"
+    text: "Consolidamos 40 servidores físicos en 4 hosts virtualizados con Proxmox. Ahorro del 65% en energía y reducción del espacio físico en datacenter."
 
     buttons: 
-      - label: "See live"
-        link: "#"
-
-      - label: "Read more"
+      - label: "Ver detalles"
         link: "#"
