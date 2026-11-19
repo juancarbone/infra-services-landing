@@ -1,0 +1,23 @@
+{{/* Franja de compromisos: banda blanca con bordes superior e inferior,
+     cuatro promesas de servicio en columnas. Reemplaza la barra de logos
+     de clientes hasta tener prueba social real y autorizada. */}}
+<section id="compromisos" class="border-line border-y bg-white">
+  <div class="wrap py-12 md:py-16">
+    {{ with .title }}
+      <h2 class="eyebrow mb-8">{{ . }}</h2>
+    {{ end }}
+    {{ if .items }}
+      <div class="grid gap-x-8 gap-y-10 sm:grid-cols-2 xl:grid-cols-4">
+        {{ range .items }}
+          <div class="border-line flex flex-col gap-3 border-l pl-6">
+            <span class="text-accent">
+              {{ partial "icons/service" (dict "name" (.icon | default "check") "class" "size-7") }}
+            </span>
+            <h3 class="text-ink text-base font-semibold">{{ .title }}</h3>
+            <p class="text-body text-sm leading-relaxed">{{ .text }}</p>
+          </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>

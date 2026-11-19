@@ -1,7 +1,14 @@
 enable: true
 
-title: "¿Listo para optimizar tu infraestructura?"
-image: "images/cta-monitoreo.png"
+title: "Empezá por saber qué tenés"
+text: "Hacemos un relevamiento sin costo de tu infraestructura: equipos, servidores, red, backups y accesos. Te decimos qué encontramos, qué es urgente y qué puede esperar. **Sin compromiso y sin letra chica.**"
+
 button:
-  label: "Solicitar consultoría gratuita"
-  link: "mailto:contacto@ejemplo.com"
+  label: "Pedí tu diagnóstico sin costo"
+  link: "mailto:contacto@bsys.com.ar?subject=Quiero%20un%20diagn%C3%B3stico%20sin%20costo"
+
+button_secondary:
+  label: "Escribinos por WhatsApp"
+  link: "https://wa.me/5491136221918?text=Hola%2C%20quiero%20consultar%20por%20los%20servicios%20de%20infraestructura%20IT"
+
+note: "Respondemos el mismo día hábil · Sin permanencia mínima · Alcance por escrito antes de empezar"

@@ -1,0 +1,25 @@
+# Franja de compromisos: reemplaza la barra de logos de clientes.
+# Son promesas de servicio ya presentes en el copy del sitio (hero,
+# servicios y CTA); no son métricas ni prueba social inventada.
+# Cuando haya clientes reales con autorización escrita, se puede
+# volver a activar `brands.yaml` y desactivar esta franja.
+enable: true
+
+title: "Nuestros compromisos"
+
+items:
+  - icon: "tag"
+    title: "Tarifa fija mensual"
+    text: "Precio previsible, sin sorpresas y sin permanencia mínima."
+
+  - icon: "monitor"
+    title: "Monitoreo 24/7 atendido"
+    text: "Las alertas las responde nuestro equipo, no vos."
+
+  - icon: "shield"
+    title: "Backup con restore probado"
+    text: "Copias cifradas e inmutables, con prueba de restauración periódica."
+
+  - icon: "cloud"
+    title: "Migraciones sin cortes"
+    text: "Ventanas planificadas y vuelta atrás disponible hasta validar."

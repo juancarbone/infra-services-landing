@@ -1,3 +1,3 @@
 ---
-title: "Infraestructura IT"
+title: "Infraestructura IT para PyMEs"
 ---

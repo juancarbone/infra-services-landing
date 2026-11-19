@@ -1,28 +1,52 @@
-{{/* Servicios: grilla 2×2 para las cuatro líneas, íconos en lugar de imágenes
-     y <h3> por tarjeta. */}}
-<section id="servicios" class="py-16">
-  <div class="container mx-auto px-4">
-    {{ with .title }}
-      <h2 class="text-primary mb-6 text-center text-4xl font-bold xl:text-5xl">{{ . }}</h2>
-    {{ end }}
-    {{ with .text }}
-      <p class="mx-auto mb-16 text-center xl:max-w-[60%]">{{ . }}</p>
-    {{ end }}
+{{/* Servicios: banda blanca, grilla 2×2 de tarjetas con borde, contenido
+     alineado a la izquierda, ícono azul, bullets con check y enlace de
+     acción. <h2> de sección, <h3> por tarjeta. */}}
+<section id="servicios" class="bg-white">
+  <div class="wrap py-16 md:py-24">
+    <div class="mb-12 max-w-3xl">
+      {{ with .pretitle }}<p class="eyebrow mb-3">{{ . }}</p>{{ end }}
+      {{ with .title }}
+        <h2 class="text-3xl font-semibold md:text-4xl">{{ . }}</h2>
+      {{ end }}
+      {{ with .text }}
+        <p class="text-body mt-4 text-base leading-relaxed md:text-lg">{{ . }}</p>
+      {{ end }}
+    </div>
+
     {{ if .cards }}
-      <div class="grid gap-8 xl:grid-cols-2">
+      <div class="grid gap-6 md:grid-cols-2">
         {{ range .cards }}
-          <div class="bg-tertiary rounded-4xl px-6 py-12 xl:px-12 xl:py-16">
-            <div class="mb-8 flex justify-center">
-              {{ partial "icons/service" (dict "name" (.icon | default "cloud") "class" "text-primary size-16") }}
-            </div>
-            <div class="flex flex-col items-center justify-center">
-              {{ with .title }}<h3 class="text-primary mb-4 text-center text-2xl">{{ . }}</h3>{{ end }}
-              {{ with .text }}<p class="mb-8 text-center">{{ . }}</p>{{ end }}
-              {{ with .button }}
-                {{ partial "components/button/outline" (dict "label" .label "href" .link) }}
-              {{ end }}
-            </div>
-          </div>
+          <article class="card flex flex-col p-8 md:p-10">
+            <span class="text-accent">
+              {{ partial "icons/service" (dict "name" (.icon | default "cloud") "class" "size-9") }}
+            </span>
+            {{ with .title }}
+              <h3 class="text-ink mt-6 mb-3 text-xl font-semibold md:text-2xl">{{ . }}</h3>
+            {{ end }}
+            {{ with .text }}
+              <p class="text-body text-base leading-relaxed">{{ . }}</p>
+            {{ end }}
+            {{ with .bullets }}
+              <ul class="mt-6 flex flex-col gap-3">
+                {{ range . }}
+                  <li class="text-body flex items-start gap-3 text-sm leading-relaxed">
+                    <span class="text-accent mt-0.5 shrink-0">
+                      {{ partial "icons/service" (dict "name" "check" "class" "size-4") }}
+                    </span>
+                    {{ . }}
+                  </li>
+                {{ end }}
+              </ul>
+            {{ end }}
+            {{ with .button }}
+              <div class="mt-auto pt-8">
+                <a class="action-link" href="{{ .link }}">
+                  {{ .label }}
+                  {{ partial "icons/arrow-right" }}
+                </a>
+              </div>
+            {{ end }}
+          </article>
         {{ end }}
       </div>
     {{ end }}

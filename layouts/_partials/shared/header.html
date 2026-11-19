@@ -1,0 +1,69 @@
+{{/* Header formal estilo Carbon: blanco, fijo, borde inferior de 1 px,
+     marca compacta (sin mayúsculas gigantes), nav gris y CTA azul plano.
+     Mantiene el mecanismo de toggle del theme para el menú mobile. */}}
+{{ $brand := site.Params.brand | default site.Title }}
+<nav class="border-line sticky top-0 z-50 border-b bg-white" aria-label="Navegación principal">
+  <div class="wrap flex h-16 items-center justify-between">
+    <a class="flex items-center gap-3" href="{{ site.BaseURL }}" aria-label="{{ $brand }} — inicio">
+      {{ partial "utilities/image" (dict "src" "images/bsys-symbol.png" "alt" "" "class" "h-9 w-auto" "loading" "eager") }}
+      <span class="text-ink text-base font-semibold tracking-tight">{{ $brand }}</span>
+    </a>
+
+    <button
+      class="text-ink cursor-pointer p-2 xl:hidden"
+      type="button"
+      data-toggle-target="#navbarContent"
+      data-toggle-class="-translate-y-full"
+      aria-label="Abrir menú de navegación"
+    >
+      {{ partial "heroicons/bars-4" }}
+    </button>
+
+    <div
+      class="fixed inset-0 z-50 flex -translate-y-full flex-col bg-white duration-300 xl:relative xl:z-auto xl:translate-y-0 xl:flex-row xl:items-center xl:gap-10"
+      id="navbarContent"
+    >
+      <div class="border-line flex h-16 items-center justify-between border-b px-5 xl:hidden">
+        <span class="flex items-center gap-3">
+          {{ partial "utilities/image" (dict "src" "images/bsys-symbol.png" "alt" "" "class" "h-7 w-auto") }}
+          <span class="text-ink text-base font-semibold">{{ $brand }}</span>
+        </span>
+        <button
+          class="text-ink cursor-pointer p-2"
+          type="button"
+          data-toggle-target="#navbarContent"
+          data-toggle-class="-translate-y-full"
+          aria-label="Cerrar menú de navegación"
+        >
+          {{ partial "heroicons/x-mark" }}
+        </button>
+      </div>
+
+      <ul class="flex flex-col px-5 pt-4 xl:flex-row xl:items-center xl:gap-8 xl:p-0">
+        {{ range site.Menus.main }}
+          <li class="border-line border-b xl:border-0">
+            <a
+              class="text-body hover:text-ink block py-4 text-base font-medium transition-colors xl:py-2 xl:text-sm"
+              href="{{ .URL }}"
+              >{{ .Name }}</a
+            >
+          </li>
+        {{ end }}
+      </ul>
+
+      <ul class="flex flex-col gap-8 px-5 pt-6 xl:flex-row xl:p-0">
+        {{ range site.Menus.buttons }}
+          <li>
+            <a
+              class="bg-accent hover:bg-accent-hover inline-flex items-center gap-3 px-5 py-2.5 text-sm font-medium text-white transition-colors duration-150"
+              href="{{ .URL }}"
+            >
+              {{ .Name }}
+              {{ partial "icons/arrow-right" }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</nav>

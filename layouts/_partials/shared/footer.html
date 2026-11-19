@@ -1,26 +1,32 @@
-<footer class="bg-tertiary/25 py-16">
-  <div class="container mx-auto px-4">
-    <div class="mb-8 grid gap-8 xl:grid-cols-12">
-      <div class="flex flex-col items-center gap-4 xl:col-span-4 xl:items-start">
-        <a class="flex items-center" href="{{ site.BaseURL }}" aria-label="{{ site.Title }}">
-          <span class="text-primary text-xl font-semibold uppercase xl:text-3xl">{{ site.Title }}</span>
+{{/* Footer formal: banda carbón, columnas con títulos pequeños en blanco,
+     enlaces grises con hover blanco, barra legal inferior. */}}
+{{ $brand := site.Params.brand | default site.Title }}
+<footer class="bg-dark text-dark-body">
+  <div class="wrap py-16">
+    <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-12 xl:gap-8">
+      <div class="flex flex-col gap-4 xl:col-span-4">
+        <a class="flex items-center gap-3" href="{{ site.BaseURL }}" aria-label="{{ $brand }} — inicio">
+          {{ partial "utilities/image" (dict "src" "images/bsys-symbol.png" "alt" "" "class" "h-9 w-auto") }}
+          <span class="text-base font-semibold text-white">{{ $brand }}</span>
         </a>
-        <p class="text-center text-sm xl:text-start">{{ site.Params.tagline | default site.Params.description }}</p>
-        {{ with .Site.Params.social }}
+        <p class="text-dark-muted max-w-sm text-sm leading-relaxed">
+          {{ site.Params.tagline | default site.Params.description }}
+        </p>
+        {{ with site.Params.social }}
           <ul class="flex gap-4">
             {{ with .instagram }}
-              <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a href="{{ . }}" aria-label="Instagram">{{ partial "icons/instagram.html" }}</a>
+              <li>
+                <a class="text-dark-muted hover:text-white" href="{{ . }}" aria-label="Instagram">{{ partial "icons/instagram.html" }}</a>
               </li>
             {{ end }}
             {{ with .facebook }}
-              <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a href="{{ . }}" aria-label="Facebook">{{ partial "icons/facebook.html" }}</a>
+              <li>
+                <a class="text-dark-muted hover:text-white" href="{{ . }}" aria-label="Facebook">{{ partial "icons/facebook.html" }}</a>
               </li>
             {{ end }}
             {{ with .twitter }}
-              <li class="bg-primary/10 text-primary flex size-8 items-center justify-center rounded-full">
-                <a href="{{ . }}" aria-label="Twitter">{{ partial "icons/twitter.html" }}</a>
+              <li>
+                <a class="text-dark-muted hover:text-white" href="{{ . }}" aria-label="Twitter">{{ partial "icons/twitter.html" }}</a>
               </li>
             {{ end }}
           </ul>
@@ -28,48 +34,56 @@
       </div>
 
       <div class="xl:col-span-2">
-        <h2 class="text-primary mb-2 text-center text-lg font-bold xl:text-start">Navegación</h2>
-        <ul class="flex flex-col gap-1 text-sm">
-          {{ range .Site.Menus.footer }}
-            <li class="text-center xl:text-start">
-              <a class="hover:text-primary" href="{{ .URL }}">{{ .Name }}</a>
+        <h2 class="mb-4 text-sm font-semibold text-white">Navegación</h2>
+        <ul class="flex flex-col gap-2.5 text-sm">
+          {{ range site.Menus.footer }}
+            <li>
+              <a class="text-dark-body hover:text-white hover:underline underline-offset-4" href="{{ .URL }}">{{ .Name }}</a>
             </li>
           {{ end }}
         </ul>
       </div>
 
       <div class="xl:col-span-3">
-        <h2 class="text-primary mb-2 text-center text-lg font-bold xl:text-start">Ubicación</h2>
-        <ul class="flex flex-col gap-3 text-sm">
-          {{ range .Site.Params.location }}
-            <li class="flex flex-col items-center gap-4 xl:flex-row">
-              <span class="text-primary">{{ partial "icons/geo-alt.html" }}</span>
-              <span class="text-center xl:text-start">{{ . }}</span>
-            </li>
-          {{ end }}
+        <h2 class="mb-4 text-sm font-semibold text-white">Servicios</h2>
+        <ul class="flex flex-col gap-2.5 text-sm">
+          <li><a class="text-dark-body hover:text-white hover:underline underline-offset-4" href="{{ site.BaseURL }}#servicios">Administración y Migración Cloud</a></li>
+          <li><a class="text-dark-body hover:text-white hover:underline underline-offset-4" href="{{ site.BaseURL }}#servicios">Monitoreo Proactivo</a></li>
+          <li><a class="text-dark-body hover:text-white hover:underline underline-offset-4" href="{{ site.BaseURL }}#servicios">Seguridad y Respaldo Gestionado</a></li>
+          <li><a class="text-dark-body hover:text-white hover:underline underline-offset-4" href="{{ site.BaseURL }}#servicios">Contenedores y Microservicios</a></li>
         </ul>
       </div>
 
       <div class="xl:col-span-3">
-        <h2 class="text-primary mb-2 text-center text-lg font-bold xl:text-start">Contacto</h2>
-        <ul class="flex flex-col gap-1 text-sm">
-          {{ range .Site.Params.contact }}
-            <li class="text-center xl:text-start">
+        <h2 class="mb-4 text-sm font-semibold text-white">Contacto</h2>
+        <ul class="flex flex-col gap-2.5 text-sm">
+          {{ range site.Params.contact }}
+            <li>
               {{ if reflect.IsMap . }}
-                <a class="hover:text-primary" href="{{ .url }}">{{ .label }}</a>
+                <a class="text-dark-body hover:text-white hover:underline underline-offset-4" href="{{ .url | safeURL }}">{{ .label }}</a>
               {{ else }}
                 {{ . }}
               {{ end }}
             </li>
           {{ end }}
         </ul>
+        <h2 class="mt-8 mb-4 text-sm font-semibold text-white">Ubicación</h2>
+        <ul class="flex flex-col gap-2 text-sm">
+          {{ range site.Params.location }}
+            <li class="text-dark-muted flex items-start gap-2">
+              <span class="mt-0.5 shrink-0">{{ partial "icons/geo-alt.html" }}</span>
+              <span>{{ . }}</span>
+            </li>
+          {{ end }}
+        </ul>
       </div>
     </div>
 
-    <div class="text-center text-sm">
-      {{ with .Site.Params.copyright }}
-        <p>{{ . }}</p>
+    <div class="border-dark-line mt-12 flex flex-col gap-2 border-t pt-8 text-sm md:flex-row md:items-center md:justify-between">
+      {{ with site.Params.copyright }}
+        <p class="text-dark-muted">{{ . }}</p>
       {{ end }}
+      <p class="text-dark-muted">Buenos Aires, Argentina</p>
     </div>
   </div>
 </footer>

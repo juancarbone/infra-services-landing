@@ -1,21 +1,41 @@
-{{/* CTA final: <h2>, bajada opcional e imagen opcional. */}}
-<section id="contacto" class="py-16">
-  <div class="container mx-auto px-4">
-    {{ with .title }}
-      <h2 class="text-primary mb-6 text-center text-4xl font-bold xl:text-5xl">{{ . }}</h2>
-    {{ end }}
-    {{ with .text }}
-      <p class="mx-auto mb-10 text-center xl:max-w-[55%]">{{ . | markdownify }}</p>
-    {{ end }}
-    {{ with .image }}
-      <div class="mb-8 flex items-center justify-center">
-        {{ partial "utilities/image.html" (dict "src" . "alt" ($.alt_image | default "") ) }}
+{{/* CTA final: banda azul corporativa estilo banner de IBM, texto blanco,
+     botón primario blanco + secundario ghost, microcopy de confianza.
+     <h2> de sección. */}}
+<section id="contacto" class="bg-accent text-white">
+  <div class="wrap py-16 md:py-20">
+    <div class="grid items-center gap-10 xl:grid-cols-[1fr_auto]">
+      <div class="max-w-2xl">
+        {{ with .title }}
+          <h2 class="text-3xl font-semibold text-white md:text-4xl">{{ . }}</h2>
+        {{ end }}
+        {{ with .text }}
+          <div class="text-accent-tint mt-4 text-base leading-relaxed md:text-lg [&_strong]:font-semibold [&_strong]:text-white">
+            {{ . | markdownify }}
+          </div>
+        {{ end }}
       </div>
-    {{ end }}
-    {{ with .button }}
-      <div class="flex items-center justify-center">
-        {{ partial "components/button/outline" (dict "label" .label "href" .link) }}
+      <div class="flex flex-col gap-4 sm:flex-row xl:flex-col">
+        {{ with .button }}
+          <a
+            class="text-accent hover:bg-accent-tint inline-flex items-center justify-center gap-3 bg-white px-6 py-3 text-sm font-medium transition-colors duration-150"
+            href="{{ .link }}"
+          >
+            {{ .label }}
+            {{ partial "icons/arrow-right" }}
+          </a>
+        {{ end }}
+        {{ with .button_secondary }}
+          <a
+            class="inline-flex items-center justify-center gap-3 border border-white/60 px-6 py-3 text-sm font-medium text-white transition-colors duration-150 hover:border-white hover:bg-white/10"
+            href="{{ .link }}"
+          >
+            {{ .label }}
+          </a>
+        {{ end }}
       </div>
+    </div>
+    {{ with .note }}
+      <p class="text-accent-tint mt-10 border-t border-white/25 pt-6 text-sm">{{ . }}</p>
     {{ end }}
   </div>
 </section>

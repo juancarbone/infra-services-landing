@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+@import './shared/_pagination.css';
+@import './home/_hero.css';
+
+/* ============================================================
+   Sistema de diseño formal — inspirado en IBM Carbon y
+   Canonical Vanilla (ubuntu.com/managed-infrastructure).
+   Override del proyecto: el theme no se modifica.
+   ============================================================ */
+
+@theme {
+  /* Tokens heredados del theme, re-mapeados a la paleta formal.
+     primary = tinta (carbón), secondary = azul corporativo,
+     tertiary = superficie gris clara. */
+  --color-primary: #161616;
+  --color-secondary: #0f62fe;
+  --color-tertiary: #f4f4f4;
+
+  /* Paleta Carbon */
+  --color-ink: #161616; /* gray-100: títulos, header de texto */
+  --color-body: #525252; /* gray-70: texto corrido */
+  --color-muted: #6f6f6f; /* gray-60: texto secundario */
+  --color-line: #e0e0e0; /* gray-20: bordes */
+  --color-surface: #f4f4f4; /* gray-10: bandas alternas */
+  --color-accent: #0f62fe; /* blue-60: acción primaria */
+  --color-accent-hover: #0353e9; /* blue-70 */
+  --color-accent-soft: #78a9ff; /* blue-40: acento sobre fondo oscuro */
+  --color-accent-tint: #edf5ff; /* blue-10: texto sobre azul */
+  --color-dark: #161616;
+  --color-dark-2: #262626; /* gray-90: paneles sobre oscuro */
+  --color-dark-line: #393939; /* gray-80: bordes sobre oscuro */
+  --color-dark-muted: #a8a8a8; /* gray-50 */
+  --color-dark-body: #c6c6c6; /* gray-30 */
+  --color-success: #24a148; /* green-50: estados OK */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-body);
+    scroll-behavior: smooth;
+    /* Compensa el header fijo al navegar por anclas. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink);
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  a,
+  button {
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* Contenedor de banda: ancho máximo único y gutters consistentes. */
+@utility wrap {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Etiqueta de sección (eyebrow), estilo Carbon. */
+@utility eyebrow {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Tarjeta formal: blanca, borde de 1 px, sin sombra ni radio. */
+@utility card {
+  background: #ffffff;
+  border: 1px solid var(--color-line);
+  border-radius: 0;
+  transition: border-color 150ms ease;
+  &:hover {
+    border-color: var(--color-accent);
+  }
+}
+
+/* Enlace de acción con flecha, estilo "Learn more ›". */
+@utility action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  &:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+body {
+  @apply antialiased;
+}
+
+/* El hero es oscuro: el énfasis del título usa azul claro (blue-40)
+   para mantener contraste, en lugar del blue-60 del theme. */
+.hero .title strong {
+  font-weight: inherit;
+  color: var(--color-accent-soft);
+}

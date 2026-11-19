@@ -1,0 +1,8 @@
+{{/* Botón secundario formal: borde de 1 px, sin radio, se rellena al hover. */}}
+<a
+  class="border-ink text-ink hover:bg-ink inline-flex items-center justify-center gap-3 rounded-none border bg-transparent px-6 py-3 text-sm font-medium transition-colors duration-150 hover:text-white"
+  href="{{ .href }}"
+>
+  {{ .label }}
+  {{ partial "icons/arrow-right" }}
+</a>

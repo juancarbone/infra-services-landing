@@ -1,28 +1,32 @@
-{{/* Hero: único <h1> de la página.
-     Si hay `image`, se muestra la foto; si no, se dibuja una ilustración SVG
-     de un panel de monitoreo (sin depender de assets externos). */}}
-<section id="hero" class="hero py-8 xl:py-16">
-  <div class="container mx-auto grid gap-16 px-4 xl:grid-cols-2">
-    <div class="flex flex-col justify-center gap-8 xl:gap-12">
+{{/* Hero formal: banda oscura estilo IBM, texto alineado a la izquierda,
+     eyebrow, único <h1> de la página, CTA azul plano + secundario ghost.
+     Si hay `image`, se muestra la foto; si no, la ilustración SVG de
+     monitoreo (sin depender de assets externos). */}}
+<section id="hero" class="hero bg-dark text-white">
+  <div class="wrap grid items-center gap-12 py-16 md:py-24 xl:grid-cols-2 xl:gap-16">
+    <div class="flex flex-col items-start gap-6">
+      {{ with .eyebrow }}
+        <p class="text-accent-soft text-[0.8125rem] font-semibold tracking-[0.08em] uppercase">{{ . }}</p>
+      {{ end }}
       {{ with .title }}
-        <h1 class="text-primary title text-center text-5xl font-bold xl:text-start xl:text-7xl">
+        <h1 class="title text-4xl leading-[1.12] font-semibold text-white md:text-5xl xl:text-[3.4rem]">
           {{ . | markdownify }}
         </h1>
       {{ end }}
       {{ with .text }}
-        <p class="text-center text-lg xl:text-start">{{ . | markdownify }}</p>
+        <div class="text-dark-body max-w-xl text-lg leading-relaxed [&_strong]:font-semibold [&_strong]:text-white">
+          {{ . | markdownify }}
+        </div>
       {{ end }}
       {{ if .buttons }}
-        <div class="flex flex-col items-center gap-4 xl:flex-row xl:gap-6">
+        <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:items-center">
           {{ range $i, $e := .buttons }}
             {{ if (eq $i 0) }}
-              <a class="bg-primary hover:bg-primary/90 rounded px-8 py-3 text-white duration-500" href="{{ .url }}">
-                {{ .label }}
-              </a>
+              {{ partial "components/button/primary" (dict "label" .label "href" (.url | default .link)) }}
             {{ else }}
               <a
-                class="border-primary text-primary hover:bg-primary flex items-center gap-2 rounded border px-8 py-3 duration-500 hover:text-white"
-                href="{{ .url }}"
+                class="inline-flex items-center justify-center gap-3 border border-[#8d8d8d] px-6 py-3 text-sm font-medium text-white transition-colors duration-150 hover:border-white hover:bg-white/10"
+                href="{{ .url | default .link }}"
               >
                 {{ .label }}
                 {{ partial "icons/arrow-right" }}
@@ -32,7 +36,7 @@
         </div>
       {{ end }}
       {{ with .note }}
-        <p class="text-primary/70 text-center text-sm xl:text-start">{{ . }}</p>
+        <p class="text-dark-muted border-dark-line mt-2 border-t pt-5 text-sm leading-relaxed">{{ . }}</p>
       {{ end }}
     </div>
 

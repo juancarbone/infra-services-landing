@@ -1,4 +1,8 @@
-enable: true
+# Desactivada: los testimonios actuales son plantillas sin autor real.
+# Publicar prueba social vacía resta credibilidad (ver
+# contenido-landing-infraestructura-it.md, PARTE 7). Reactivar cuando
+# haya citas reales con nombre, cargo, empresa y autorización.
+enable: false
 
 title: "Lo que dicen las empresas que ya dejaron de preocuparse por esto"
 

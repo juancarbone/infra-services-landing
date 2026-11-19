@@ -1,29 +1,36 @@
 enable: true
 
+pretitle: "Casos"
+
+title: "Problemas reales, resueltos sin que la empresa deje de trabajar"
+text: "Tres formas en que una PyME deja de depender de la suerte: una migración, un incidente que no llegó a pasar y un backup que se pudo restaurar."
+
+# TODO: estos tres casos son plantillas narrativas. Reemplazar por casos
+# reales (cliente, contexto y resultado) antes de publicar.
 items:
-  - image: "images/caso-backup.png"
-    pretitle: "Caso de éxito"
-    title: "Migración a backup automatizado"
-    text: "Implementamos un sistema de backup automatizado con replicación en sitio remoto para una empresa de logística. Redujimos el RTO de 24h a 2h y eliminamos pérdidas de datos."
+  - icon: "cloud"
+    pretitle: "Migración cloud"
+    title: "Del servidor en la oficina a la nube, sin perder un día de facturación"
+    text: "Un estudio contable trabajaba sobre un servidor físico que ya no tenía repuestos y del que dependía toda la facturación. Planificamos la migración en ventanas nocturnas, con el entorno anterior disponible para volver atrás, y validamos cada paso con el equipo antes de cortar."
+    result: "El lunes siguiente facturaron con normalidad."
+    buttons:
+      - label: "Quiero algo así"
+        link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20migraci%C3%B3n%20cloud"
 
-    buttons: 
-      - label: "Ver detalles"
-        link: "#"
+  - icon: "monitor"
+    pretitle: "Monitoreo proactivo"
+    title: "La caída que nunca llegó a la oficina"
+    text: "El enlace principal de una distribuidora empezó a perder paquetes de madrugada. El monitoreo lo detectó, abrió el ticket y hicimos el reclamo al proveedor antes de que abriera la oficina. Cuando llegó el primer empleado, el enlace de respaldo ya estaba activo."
+    result: "Nadie de la empresa se enteró de que había un problema."
+    buttons:
+      - label: "Quiero algo así"
+        link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20monitoreo%20proactivo"
 
-  - image: "images/caso-redes.png"
-    pretitle: "Caso de éxito"
-    title: "Rediseño de red corporativa"
-    text: "Rediseñamos la infraestructura de redes para una firma legal con 3 sucursales. Implementamos VLANs, QoS y SD-WAN para garantizar conectividad crítica 24/7."
-
-    buttons: 
-      - label: "Ver detalles"
-        link: "#"
-
-  - image: "images/caso-virtualizacion.png"
-    pretitle: "Caso de éxito"
-    title: "Consolidación de servidores"
-    text: "Consolidamos 40 servidores físicos en 4 hosts virtualizados con Proxmox. Ahorro del 65% en energía y reducción del espacio físico en datacenter."
-
-    buttons: 
-      - label: "Ver detalles"
-        link: "#"
+  - icon: "shield"
+    pretitle: "Respaldo gestionado"
+    title: "El ransomware que se frenó con un backup que sí se podía restaurar"
+    text: "Un usuario abrió un archivo adjunto y cifró la carpeta compartida de una clínica. Como las copias eran inmutables y estaban separadas del entorno productivo, el ransomware no las alcanzó. Restauramos desde la versión previa al incidente, sin pagar rescate."
+    result: "La historia clínica de los pacientes quedó intacta."
+    buttons:
+      - label: "Quiero algo así"
+        link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20respaldo%20gestionado"

@@ -1,25 +1,51 @@
 enable: true
 
-title: "Nuestros servicios de infraestructura"
-text: "Ofrecemos soluciones integrales para mantener tu infraestructura IT operativa, segura y escalable. Cada servicio está diseñado para cubrir necesidades específicas de empresas modernas."
+pretitle: "Servicios"
+
+title: "Cuatro servicios, un solo responsable"
+text: "No vendemos herramientas para que las operes vos. Nos hacemos cargo de la infraestructura de punta a punta, con alcance por escrito y un único canal de contacto."
+
 cards:
-  - image: "images/servidores.png"
-    title: "Gestión de servidores"
-    text: "Instalación, configuración y mantenimiento de servidores físicos y virtuales. Optimización de rendimiento y seguridad para Linux y Windows Server."
+  - icon: "cloud"
+    title: "Administración y Migración Cloud"
+    text: "Migramos tus servidores a la nube y administramos el día a día. Planificamos cada paso con vuelta atrás y optimizamos el costo mes a mes."
+    bullets:
+      - "Migración planificada, con el entorno anterior disponible hasta validar"
+      - "Administración de AWS, Azure o nube privada"
+      - "Control de costos: qué se paga, por qué y qué se puede apagar"
     button:
-      label: "Más información"
-      link: "#"
+      label: "Consultar"
+      link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20Administraci%C3%B3n%20y%20Migraci%C3%B3n%20Cloud"
 
-  - image: "images/redes.png"
-    title: "Diseño de redes"
-    text: "Arquitectura de redes empresariales, configuración de routers, switches y firewalls. Conectividad segura y alta disponibilidad."
+  - icon: "monitor"
+    title: "Monitoreo Proactivo de Redes y Servidores"
+    text: "Vigilamos servidores, red y servicios críticos las 24 horas. Cuando salta una alerta la atendemos nosotros: no te mandamos un tablero para que lo mires."
+    bullets:
+      - "Servidores, enlaces, WiFi, firewall y servicios de negocio"
+      - "Alertas atendidas por nuestro equipo, con umbrales ya calibrados"
+      - "Reporte mensual con incidentes, causas y tiempos de resolución"
     button:
-      label: "Más información"
-      link: "#"
+      label: "Consultar"
+      link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20Monitoreo%20Proactivo"
 
-  - image: "images/virtualizacion.png"
-    title: "Virtualización y Cloud"
-    text: "Implementación de VMware, Proxmox y soluciones cloud híbridas. Migración de cargas de trabajo y optimización de recursos."
+  - icon: "shield"
+    title: "Seguridad Informática y Respaldo Gestionado"
+    text: "Tus datos se guardan solos, cifrados y fuera de tu oficina. Y probamos que se puedan recuperar: un backup que nunca se restauró no es un backup."
+    bullets:
+      - "Copias diarias cifradas, inmutables y con una copia fuera del país"
+      - "Prueba de restauración periódica, con informe"
+      - "Recuperación de un archivo puntual, sin restaurar todo"
     button:
-      label: "Más información"
-      link: "#"
+      label: "Consultar"
+      link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20Seguridad%20y%20Respaldo%20Gestionado"
+
+  - icon: "cube"
+    title: "Contenedores y Microservicios"
+    text: "Actualizá tu sistema sin cortar el servicio. Empaquetamos tus aplicaciones en contenedores para que escalen por demanda y se desplieguen sin downtime."
+    bullets:
+      - "Contenerización de aplicaciones que hoy corren en un servidor físico"
+      - "Kubernetes administrado, del piloto a producción"
+      - "Despliegues automatizados con vuelta atrás en un comando"
+    button:
+      label: "Consultar"
+      link: "mailto:contacto@bsys.com.ar?subject=Consulta%20sobre%20Contenedores%20y%20Microservicios"

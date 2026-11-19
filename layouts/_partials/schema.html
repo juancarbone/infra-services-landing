@@ -1,0 +1,37 @@
+{{/* Datos estructurados schema.org (reemplaza el template interno, que no
+     emitía nada). ProfessionalService con los datos reales de BSys.
+     Mantener en sincronía con params.contact de hugo.toml. */}}
+{{ $symbol := resources.Get "images/bsys-symbol.png" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "{{ site.Params.brand | default site.Title }}",
+  "url": "{{ site.BaseURL }}",
+  "description": "{{ site.Params.description }}",
+  {{ with $symbol }}"logo": "{{ .Permalink }}",{{ end }}
+  "email": "contacto@bsys.com.ar",
+  "telephone": "+541136221918",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+5491136221918",
+    "contactType": "customer service",
+    "availableLanguage": ["Spanish"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Buenos Aires",
+    "addressCountry": "AR"
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Argentina"
+  },
+  "knowsAbout": [
+    "Administración y migración cloud",
+    "Monitoreo proactivo de redes y servidores",
+    "Seguridad informática y respaldo gestionado",
+    "Contenedores y microservicios"
+  ]
+}
+</script>

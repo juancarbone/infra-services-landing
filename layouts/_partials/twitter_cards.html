@@ -1,0 +1,8 @@
+{{/* Twitter Cards propias: tarjeta grande con la pieza de marca. */}}
+{{ $ogImage := resources.Get "images/og-image.png" }}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}" />
+<meta name="twitter:description" content="{{ site.Params.description }}" />
+{{ with $ogImage }}
+  <meta name="twitter:image" content="{{ .Permalink }}" />
+{{ end }}

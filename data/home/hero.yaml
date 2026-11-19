@@ -1,15 +1,21 @@
 enable: true
 
-title: "Infraestructura IT **profesional** para tu empresa"
-text: "Gestionamos servidores, redes, virtualización, backups y monitoreo para que tu negocio opere sin interrupciones. Soluciones escalables y seguras."
+eyebrow: "Infraestructura IT gestionada para PyMEs"
+
+title: "Infraestructura IT que **no se detiene**"
+text: "Somos el área de sistemas que tu PyME no tiene que contratar. Monitoreo 24/7, backup con restauración probada y migraciones sin cortes, con **tarifa fija mensual y sin permanencia mínima**."
 
 buttons:
-  - label: "Nuestros servicios"
-    link: "#services"
-    url: "#services"
+  - label: "Pedí un diagnóstico sin costo"
+    link: "#contacto"
+    url: "mailto:contacto@bsys.com.ar?subject=Quiero%20un%20diagn%C3%B3stico%20sin%20costo"
 
-  - label: "Hablemos"
-    link: ""
-    url: "mailto:contacto@ejemplo.com"
+  - label: "Ver servicios"
+    link: "#servicios"
+    url: "#servicios"
 
-image: "images/hero-infraestructura.png"
+note: "Relevamiento sin costo · Respuesta a incidentes críticos en menos de 30 minutos · Sin contratos anuales"
+
+# Si se define `image`, se muestra esa foto en lugar de la ilustración SVG.
+# image: "images/hero-image.png"
+# alt: "Panel de monitoreo con el estado de servidores y red de una empresa"

@@ -1,4 +1,7 @@
-enable: true
+# Desactivada: no hay clientes reales con autorización para publicar.
+# La franja de confianza la cumple `commitments.yaml` (compromisos de
+# servicio). Reactivar solo con clientes reales y autorización escrita.
+enable: false
 
 title: "Empresas que ya trabajan con nosotros"
 

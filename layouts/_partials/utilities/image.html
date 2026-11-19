@@ -34,6 +34,6 @@
   {{ with $srcset }}{{ if . }}srcset="{{ delimit . ", " }}"{{ end }}{{ end }}
   {{ with .class }}class="{{ . }}"{{ end }}
   alt="{{ $alt }}"
-  loading="lazy"
+  loading="{{ .loading | default "lazy" }}"
   decoding="async"
 />
